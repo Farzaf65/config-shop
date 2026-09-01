@@ -70,7 +70,7 @@ https://t.me/last_circle_king
 
 👤 آیدی پشتیبانی:
 
-@PINGAMIRREZA
+https://t.me/PINGAMIRREZA
 
 همین حالا برای مشاهده سرویس‌ها و شروع سفارش وارد کانال شوید. 🚀🎮
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Config Shop — Gaming Network Services</title>
+<meta name="description" content="WireGuard و DNS اختصاصی برای گیمرها — پینگ پایین، اتصال پایدار." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Header ============================================================ -->
+<header class="site-header">
+  <div class="container">
+    <div class="logo">
+      <span class="logo__mark">CS</span>
+      <span>Config Shop</span>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="#home" data-i18n="nav.home">خانه</a>
+      <a href="#services" data-i18n="nav.services">سرویس‌ها</a>
+      <a href="#faq" data-i18n="nav.faq">راهنما</a>
+      <a href="#support" data-i18n="nav.support">پشتیبانی</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-toggle">
+        <button data-lang="fa">FA</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <button class="btn btn--primary" data-open-order-cta data-i18n="nav.cta">ثبت سفارش</button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero =============================================================== -->
+<section class="hero" id="home">
+  <div class="hero-canvas-wrap"><canvas id="network-canvas"></canvas></div>
+  <div class="container">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Config Shop</span>
+    <h1 data-i18n="hero.title">شبکه‌ گیمینگ بهینه، پینگ پایین، اتصال پایدار</h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle">کانفیگ WireGuard و DNS اختصاصی برای گیمرها.</p>
+    <button class="btn btn--primary" data-open-order-cta data-i18n="hero.cta">مشاهده سرویس‌ها</button>
+    <div class="hero-stats">
+      <div class="stat"><strong>11</strong><span data-i18n="hero.stat1">لوکیشن سرور</span></div>
+      <div class="stat"><strong>7</strong><span data-i18n="hero.stat2">کانفیگ در هر سفارش</span></div>
+      <div class="stat"><strong>30</strong><span data-i18n="hero.stat3">روز پشتیبانی فعال</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services =========================================================== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="services.title">سرویس‌های ما</h2>
+      <p data-i18n="services.subtitle">سرویس مناسب را انتخاب کنید</p>
+    </div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</section>
+
+<!-- Benefits ============================================================ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="benefits.title">چرا Config Shop</h2></div>
+    <div class="benefits-grid" id="benefits-grid"></div>
+  </div>
+</section>
+
+<!-- Why ================================================================= -->
+<section class="section">
+  <div class="container">
+    <div class="why-wrap">
+      <div>
+        <h2 style="margin-bottom:22px" data-i18n="why.title">چرا ما را انتخاب کنید</h2>
+        <ul class="why-list" id="why-list"></ul>
+      </div>
+      <div class="why-visual" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Network / Locations ================================================= -->
+<section class="section" id="network">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="network.title">شبکه‌ سرورهای ما</h2>
+      <p data-i18n="network.subtitle">مسیر شما، بهینه‌شده تا نزدیک‌ترین و پایدارترین سرور</p>
+    </div>
+    <div class="locations-preview" id="locations-preview"></div>
+  </div>
+</section>
+
+<!-- FAQ ================================================================= -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="faq.title">سوالات متداول</h2></div>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- Support ============================================================== -->
+<section class="section" id="support">
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="support.title">مرکز پشتیبانی</h2>
+      <p data-i18n="support.subtitle">برای هرگونه سوال، مستقیماً در ارتباط باشید</p>
+    </div>
+    <div class="support-grid">
+      <a class="support-card" id="link-telegram-admin" target="_blank" rel="noopener">
+        <span class="support-card__icon">💬</span><span data-i18n="support.telegramAdmin">ادمین تلگرام</span>
+      </a>
+      <a class="support-card" id="link-instagram-page" target="_blank" rel="noopener">
+        <span class="support-card__icon">📷</span><span data-i18n="support.instagramPage">پیج اینستاگرام</span>
+      </a>
+      <a class="support-card" id="link-telegram-channel" target="_blank" rel="noopener">
+        <span class="support-card__icon">📢</span><span data-i18n="support.telegramChannel">کانال تلگرام</span>
+      </a>
+      <a class="support-card" id="link-instagram-link" target="_blank" rel="noopener">
+        <span class="support-card__icon">🔗</span><span data-i18n="support.instagramLink">لینک اینستاگرام</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px"><span class="logo__mark">CS</span><span>Config Shop</span></div>
+        <p data-i18n="footer.about">فروشگاه تخصصی سرویس‌های شبکه و گیمینگ</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.linksTitle">دسترسی سریع</h4>
+        <ul>
+          <li><a href="#home" data-i18n="nav.home">خانه</a></li>
+          <li><a href="#services" data-i18n="nav.services">سرویس‌ها</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">راهنما</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.servicesTitle">سرویس‌ها</h4>
+        <ul>
+          <li>WireGuard Gaming</li>
+          <li>DNS Gaming</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.supportTitle">پشتیبانی</h4>
+        <ul>
+          <li><a id="footer-telegram" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a id="footer-instagram" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Config Shop — </span><span data-i18n="footer.rights">تمامی حقوق محفوظ است.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Order flow overlay ===================================================== -->
+<div class="order-overlay" id="order-overlay">
+  <div class="order-modal">
+    <div class="order-modal__head">
+      <h3 data-i18n="order.panelTitle">ساخت سفارش</h3>
+      <button class="order-close" id="order-close">✕</button>
+    </div>
+    <div class="order-stepper" id="order-stepper"></div>
+    <div class="order-body" id="order-body"></div>
+    <div class="order-nav" id="order-nav"></div>
+  </div>
+</div>
+
+<script>document.getElementById("footer-year") && (document.getElementById("footer-year").textContent = new Date().getFullYear());</script>
+<script src="js/config.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/network-bg.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

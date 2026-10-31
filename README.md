@@ -46,7 +46,6 @@
 
 🔗 تکمیل سفارش:
 https://farzaf65.github.io/config-shop/
-
 📢 کانال تلگرام:
 https://t.me/last_circle_king
 

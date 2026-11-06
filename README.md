@@ -45,7 +45,7 @@
 برای ثبت اطلاعات و تکمیل سفارش می‌توانید از لینک زیر استفاده کنید:
 
 🔗 تکمیل سفارش:
-https://farzaf65.github.io/config-shop/
+# https://farzaf65.github.io/config-shop/
 📢 کانال تلگرام:
 https://t.me/last_circle_king
 

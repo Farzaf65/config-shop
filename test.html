@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>تست اتصال سایت به سرور</title>
+<style>body{margin:0;background:#0b1020;color:#e8ecf8;font:15px/1.9 Tahoma,sans-serif}.w{max-width:560px;margin:0 auto;padding:18px}
+button{width:100%;padding:13px;border:0;border-radius:12px;background:#3ed9c4;color:#04201c;font:700 15px Tahoma;cursor:pointer;margin:8px 0}
+.b{background:#141b30;border:1px solid #26304d;border-radius:12px;padding:12px;margin:10px 0;white-space:pre-wrap;word-break:break-all}
+.ok{color:#4ade80}.bad{color:#ff6b6b}.mu{color:#93a0c4;font-size:13px}</style></head><body><div class="w">
+<h2>تست اتصال سایت به سرور</h2>
+<p class="mu">این صفحه یک سفارش آزمایشی واقعی با عکس خیلی کوچک می‌فرستد و نتیجه را نشان می‌دهد. سفارش آزمایشی را بعداً از پنل ادمین حذف کن.</p>
+<button id="go">ارسال سفارش آزمایشی</button><div id="out"></div></div>
+<script>
+var URL_='https://ylsxmwivezptnngtqjju.supabase.co/functions/v1/clever-worker', KEY='sb_publishable_gbZbTBe5uuffWZrViG0CfQ_g2evtH0U';
+var HINT={order_no:'شماره سفارش نامعتبر',plan:'پلن در تابع پیدا نشد (فهرست قیمت تابع با سایت فرق دارد)',phone:'شماره تلفن نامعتبر',card:'شماره کارت نامعتبر',receipt_size:'حجم عکس رسید مجاز نیست',receipt_type:'نوع فایل رسید مجاز نیست',rate:'محدودیت تعداد سفارش',upload:'ذخیره عکس در Storage شکست خورد (bucket «receipts» یا سیاست‌ها)',db:'ثبت در جدول orders شکست خورد (جدول یا ستون‌ها)',server:'خطای داخلی تابع (لاگ تابع را ببین)'};
+function say(t,c){var d=document.createElement('div');d.className='b '+(c||'');d.textContent=t;document.getElementById('out').appendChild(d);}
+document.getElementById('go').onclick=async function(){
+  document.getElementById('out').innerHTML='';
+  var no='CSAR-',A='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';for(var i=0;i<10;i++)no+=A[Math.floor(Math.random()*A.length)];
+  var cv=document.createElement('canvas');cv.width=cv.height=120;var x=cv.getContext('2d');x.fillStyle='#3ed9c4';x.fillRect(0,0,120,120);x.fillStyle='#04201c';x.font='20px sans-serif';x.fillText('TEST',30,65);
+  var blob=await new Promise(function(r){cv.toBlob(r,'image/png');});
+  var fd=new FormData();fd.append('data',JSON.stringify({orderNo:no,svcId:'wireguard',planId:'wg-35',location:'TEST',name:'تست',tg:'',phone:'09120000000',payerCard:'6037997112345678',notes:'سفارش آزمایشی - حذف شود'}));fd.append('receipt',blob,'t.png');
+  say('۱) در حال ارسال سفارش '+no+' …');
+  var r,txt;
+  try{ r=await fetch(URL_,{method:'POST',body:fd,headers:{apikey:KEY}}); txt=await r.text(); }
+  catch(e){ say('✖ به سرور وصل نشد: '+e.message+'\nیعنی اینترنت/فیلتر یا آدرس تابع. VPN را امتحان کن.','bad'); return; }
+  say('وضعیت HTTP: '+r.status+'\nپاسخ: '+txt, r.ok?'':'bad');
+  var j=null;try{j=JSON.parse(txt);}catch(e){}
+  if(r.status===404){ say('✖ تابعی با این آدرس پیدا نشد (clever-worker).','bad'); return; }
+  if(r.status===401||r.status===403){ say('✖ Verify JWT روی تابع روشن است. خاموشش کن.','bad'); return; }
+  if(j&&j.ok){ say('✔ سفارش در دیتابیس ثبت شد.','ok'); say(j.notified?'✔ پیام تلگرام برای مدیر ارسال شد.':'✖ سفارش ثبت شد ولی پیام تلگرام ارسال نشد: توکن/Chat ID در Secrets یا Start نزدن ربات.',j.notified?'ok':'bad'); }
+  else if(j){ say('✖ '+(HINT[j.error]||('خطا: '+j.error)),'bad'); }
+};
+</script></body></html>
